@@ -2,6 +2,9 @@ import ReactNativeWidgetExtension from "./ReactNativeWidgetExtensionModule";
 export function areActivitiesEnabled() {
     return ReactNativeWidgetExtension.areActivitiesEnabled();
 }
+export function isActivityActive() {
+    return ReactNativeWidgetExtension.isActivityActive();
+}
 export function startActivity(...args) {
     return ReactNativeWidgetExtension.startActivity(...args);
 }
