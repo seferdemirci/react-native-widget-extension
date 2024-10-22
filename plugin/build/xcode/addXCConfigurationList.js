@@ -37,6 +37,7 @@ function addXCConfigurationList(
     PRODUCT_NAME: `"$(TARGET_NAME)"`,
     SWIFT_VERSION: "5.0",
     TARGETED_DEVICE_FAMILY: `"1"`,
+    SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: `"NO"`,
     SUPPORTS_MACCATALYST: `"NO"`,
     EXCLUDED_ARCHS: `"arm64"`,
     INFOPLIST_FILE: `${targetName}/Info.plist`,
