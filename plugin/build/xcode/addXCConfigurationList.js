@@ -1,9 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.addXCConfigurationList = void 0;
-function addXCConfigurationList(xcodeProject, { targetName, currentProjectVersion, bundleIdentifier, deploymentTarget, marketingVersion, }) {
-    const commonBuildSettings = {
-        /* ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+function addXCConfigurationList(
+  xcodeProject,
+  {
+    targetName,
+    currentProjectVersion,
+    bundleIdentifier,
+    deploymentTarget,
+    marketingVersion,
+  }
+) {
+  const commonBuildSettings = {
+    /* ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
                     ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
                     CLANG_ANALYZER_NONNULL = YES;
                     CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -25,38 +34,44 @@ function addXCConfigurationList(xcodeProject, { targetName, currentProjectVersio
                     SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
                     SWIFT_EMIT_LOC_STRINGS = YES;
                     SWIFT_OPTIMIZATION_LEVEL = "-Onone"; */
-        PRODUCT_NAME: `"$(TARGET_NAME)"`,
-        SWIFT_VERSION: '5.0',
-        TARGETED_DEVICE_FAMILY: `"1,2"`,
-        INFOPLIST_FILE: `${targetName}/Info.plist`,
-        CURRENT_PROJECT_VERSION: `"${currentProjectVersion}"`,
-        IPHONEOS_DEPLOYMENT_TARGET: `"${deploymentTarget}"`,
-        PRODUCT_BUNDLE_IDENTIFIER: `"${bundleIdentifier}"`,
-        GENERATE_INFOPLIST_FILE: `"YES"`,
-        INFOPLIST_KEY_CFBundleDisplayName: targetName,
-        INFOPLIST_KEY_NSHumanReadableCopyright: `""`,
-        MARKETING_VERSION: `"${marketingVersion}"`,
-        SWIFT_OPTIMIZATION_LEVEL: `"-Onone"`,
-        CODE_SIGN_ENTITLEMENTS: `"${targetName}/${targetName}.entitlements"`,
-        // DEVELOPMENT_TEAM: `"G76836P2D4"`,
-    };
-    const buildConfigurationsList = [
-        {
-            name: 'Debug',
-            isa: 'XCBuildConfiguration',
-            buildSettings: {
-                ...commonBuildSettings,
-            },
-        },
-        {
-            name: 'Release',
-            isa: 'XCBuildConfiguration',
-            buildSettings: {
-                ...commonBuildSettings,
-            },
-        },
-    ];
-    const xCConfigurationList = xcodeProject.addXCConfigurationList(buildConfigurationsList, 'Release', `Build configuration list for PBXNativeTarget "${targetName}"`);
-    return xCConfigurationList;
+    PRODUCT_NAME: `"$(TARGET_NAME)"`,
+    SWIFT_VERSION: "5.0",
+    TARGETED_DEVICE_FAMILY: `"1"`,
+    SUPPORTS_MACCATALYST: `"NO"`,
+    EXCLUDED_ARCHS: `"arm64"`,
+    INFOPLIST_FILE: `${targetName}/Info.plist`,
+    CURRENT_PROJECT_VERSION: `"${currentProjectVersion}"`,
+    IPHONEOS_DEPLOYMENT_TARGET: `"${deploymentTarget}"`,
+    PRODUCT_BUNDLE_IDENTIFIER: `"${bundleIdentifier}"`,
+    GENERATE_INFOPLIST_FILE: `"YES"`,
+    INFOPLIST_KEY_CFBundleDisplayName: targetName,
+    INFOPLIST_KEY_NSHumanReadableCopyright: `""`,
+    MARKETING_VERSION: `"${marketingVersion}"`,
+    SWIFT_OPTIMIZATION_LEVEL: `"-Onone"`,
+    CODE_SIGN_ENTITLEMENTS: `"${targetName}/${targetName}.entitlements"`,
+    DEVELOPMENT_TEAM: `"D88Z8WB69R"`,
+  };
+  const buildConfigurationsList = [
+    {
+      name: "Debug",
+      isa: "XCBuildConfiguration",
+      buildSettings: {
+        ...commonBuildSettings,
+      },
+    },
+    {
+      name: "Release",
+      isa: "XCBuildConfiguration",
+      buildSettings: {
+        ...commonBuildSettings,
+      },
+    },
+  ];
+  const xCConfigurationList = xcodeProject.addXCConfigurationList(
+    buildConfigurationsList,
+    "Release",
+    `Build configuration list for PBXNativeTarget "${targetName}"`
+  );
+  return xCConfigurationList;
 }
 exports.addXCConfigurationList = addXCConfigurationList;
