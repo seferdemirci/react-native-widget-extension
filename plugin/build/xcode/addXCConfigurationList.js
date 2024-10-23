@@ -39,7 +39,6 @@ function addXCConfigurationList(
     TARGETED_DEVICE_FAMILY: `"1"`,
     SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD: `"NO"`,
     SUPPORTS_MACCATALYST: `"NO"`,
-    EXCLUDED_ARCHS: `"arm64"`,
     INFOPLIST_FILE: `${targetName}/Info.plist`,
     CURRENT_PROJECT_VERSION: `"${currentProjectVersion}"`,
     IPHONEOS_DEPLOYMENT_TARGET: `"${deploymentTarget}"`,
